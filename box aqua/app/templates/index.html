@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Aqua - Aquarium Supplies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header id="home">
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Box Aqua</h1>
+                <ul class="nav-links">
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <div class="container">
+                <h1>Welcome to Box Aqua</h1>
+                <p>Explore our wide range of freshwater fishes and accessories</p>
+                <a href="#products" class="btn">Explore Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-images">
+                {% for key in object_keys %}
+                    <img src="{{ s3_url(key) }}" alt="Product Image">
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Box Aqua</h2>
+            <p>Box Aqua is your one-stop destination for high-quality aquarium supplies. We offer a wide range of freshwater fishes, accessories, and expert advice to help you create and maintain your dream aquarium.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: info@boxaqua.com</p>
+            <p>Phone: 123-456-7890</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Box Aqua. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
